@@ -5,535 +5,288 @@
   <title>Abhinandan Raj | Web Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* --------- Base Styles --------- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    body {
-      background: #05020a;
-      color: #f5f5f5;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    section {
-      padding: 70px 10%;
-    }
-    h1, h2, h3 {
-      font-weight: 700;
-    }
-    .tagline {
-      color: #c3b4ff;
-      font-size: 0.95rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* --------- Navbar --------- */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
+    body {
+      background: #0c0616;
+      color: #ffffff;
+    }
+
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 10%;
-      background: rgba(5, 2, 15, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 1.1rem;
-    }
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      font-size: 0.9rem;
-    }
-    .nav-links a {
-      opacity: 0.85;
-    }
-    .nav-links a:hover {
-      opacity: 1;
+      padding: 16px 8%;
+      background: #140a2e;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    /* --------- Hero --------- */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      min-height: 80vh;
-    }
-    .hero-text {
-      flex: 1 1 280px;
-    }
-    .hero-text h1 {
-      font-size: 2.3rem;
-      margin: 12px 0;
-    }
-    .hero-text p {
-      margin-top: 10px;
-      max-width: 520px;
-      color: #d9d2ff;
-      font-size: 0.98rem;
-    }
-    .hero-buttons {
-      margin-top: 22px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .btn-primary, .btn-ghost {
-      padding: 9px 18px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #7f5dff, #ff3b8d);
-      border-color: transparent;
+    header a {
       color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
     }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 80px 8%;
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #d8c8ff;
+      font-size: 16px;
+      margin-top: 8px;
+      max-width: 500px;
+    }
+
+    .hero-tagline {
+      color: #c7b2ff;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-buttons {
+      margin-top: 18px;
+    }
+
+    .hero-buttons a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #7f5dff;
+      color: white;
+      border: none;
+    }
+
     .btn-ghost {
       background: transparent;
-      border-color: rgba(199, 166, 255, 0.6);
+      border: 1px solid #9f85ff;
       color: #e5deff;
+      margin-left: 12px;
     }
+
     .btn-primary:hover {
       filter: brightness(1.1);
     }
+
     .btn-ghost:hover {
-      background: rgba(199,166,255,0.06);
+      background: rgba(159, 133, 255, 0.15);
     }
 
-    .hero-photo {
-      flex: 0 0 230px;
-      display: flex;
-      justify-content: center;
-    }
-    .hero-photo-inner {
-      position: relative;
-      width: 230px;
-      height: 230px;
+    .profile-img {
+      width: 240px;
+      height: 240px;
       border-radius: 26px;
       overflow: hidden;
-      box-shadow:
-        0 0 0 1px rgba(199,166,255,0.3),
-        0 28px 60px rgba(0,0,0,0.75);
-      background: radial-gradient(circle at top, #b48cff 0, #2b194a 35%, #05020a 80%);
+      box-shadow: 0 0 20px rgba(118, 77, 255, 0.6);
+      background: #180b34;
     }
-    .hero-photo-inner img {
+
+    .profile-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      position: relative;
-      z-index: 2;
-    }
-    .hero-orbit {
-      position: absolute;
-      inset: -20px;
-      border-radius: inherit;
-      border: 1px dashed rgba(255,255,255,0.14);
-      transform: rotate(3deg);
-      z-index: 1;
     }
 
-    /* --------- Section Titles --------- */
-    .section-heading {
-      margin-bottom: 22px;
-    }
-    .section-heading h2 {
-      font-size: 1.4rem;
-    }
-    .section-heading p {
-      font-size: 0.85rem;
-      color: #b7a7ff;
-      margin-top: 4px;
+    h2 {
+      margin-top: 40px;
+      font-size: 22px;
+      color: #c9afff;
+      margin-bottom: 15px;
     }
 
-    /* --------- Skills --------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-    .skill-card {
-      background: radial-gradient(circle at top left, #3a215b 0, #12081c 40%, #05020a 100%);
-      border-radius: 18px;
-      padding: 16px 18px;
-      border: 1px solid rgba(197,169,255,0.25);
-    }
-    .skill-card h3 {
-      font-size: 0.98rem;
-      margin-bottom: 8px;
-    }
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-    .tag {
-      font-size: 0.78rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(199,166,255,0.08);
-      border: 1px solid rgba(199,166,255,0.25);
+    section {
+      padding: 0 8%;
+      margin-bottom: 10px;
     }
 
-    /* --------- Projects --------- */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    .skills-list p,
+    .contact-info p {
+      margin-bottom: 6px;
+      font-size: 14px;
     }
+
     .project-card {
-      background: radial-gradient(circle at top, #432a6b 0, #110818 40%, #05020a 100%);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(209,172,255,0.25);
+      background: #150a2f;
+      border: 1px solid #7e63d9;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 16px;
+      font-size: 14px;
     }
-    .project-card h3 {
-      font-size: 1rem;
+
+    .project-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .project-card span {
+      color: #c0afff;
+      font-size: 12px;
+      display: block;
       margin-bottom: 6px;
     }
-    .project-meta {
-      font-size: 0.8rem;
-      color: #c4b8ff;
-      margin-bottom: 8px;
-    }
-    .project-card p {
-      font-size: 0.9rem;
-      color: #e9e3ff;
-    }
-    .project-tags {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+
+    .contact-info a {
+      color: #b089ff;
+      text-decoration: none;
     }
 
-    /* --------- Timeline --------- */
-    .timeline {
-      border-left: 1px dashed rgba(198,167,255,0.45);
-      padding-left: 18px;
-      margin-top: 10px;
-    }
-    .timeline-item {
-      margin-bottom: 14px;
-    }
-    .timeline-item h3 {
-      font-size: 0.95rem;
-    }
-    .timeline-item span {
-      font-size: 0.8rem;
-      color: #b29eff;
-    }
-    .timeline-item p {
-      font-size: 0.86rem;
-      margin-top: 4px;
-      color: #e0d8ff;
+    .contact-info a:hover {
+      text-decoration: underline;
     }
 
-    /* --------- Contact --------- */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0,2fr) minmax(0,1.4fr);
-      gap: 20px;
-      align-items: flex-start;
-    }
-    .contact-box {
-      background: radial-gradient(circle at top left, #3c215f 0, #110818 40%, #05020a 100%);
-      border-radius: 18px;
-      padding: 18px;
-      border: 1px solid rgba(203,171,255,0.3);
-      font-size: 0.9rem;
-    }
-    .contact-box p {
-      margin-bottom: 6px;
-    }
-    .contact-label {
-      font-size: 0.8rem;
-      color: #bfaeff;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 10px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      background: #090313;
-      border-radius: 10px;
-      border: 1px solid rgba(185,155,255,0.45);
-      padding: 8px 10px;
-      color: #f5f5f5;
-      font-size: 0.87rem;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: #d1a8ff;
-      box-shadow: 0 0 0 1px rgba(209,168,255,0.5);
-    }
-    .contact-form button {
-      justify-self: flex-start;
-    }
-
-    /* --------- Footer --------- */
-    footer {
-      padding: 18px 10%;
-      font-size: 0.8rem;
-      color: #a694ff;
-      border-top: 1px solid rgba(255,255,255,0.03);
-      background: #04010a;
+    .footer {
       text-align: center;
+      padding: 18px;
+      margin-top: 40px;
+      border-top: 1px solid #36285b;
+      font-size: 12px;
+      color: #987fff;
     }
 
-    /* --------- Responsive --------- */
     @media (max-width: 768px) {
       .hero {
-        padding-top: 40px;
+        padding-top: 50px;
       }
-      .navbar {
-        padding-inline: 6%;
+
+      .hero-buttons a {
+        display: block;
+        margin-bottom: 10px;
       }
-      section {
-        padding-inline: 6%;
+
+      .btn-ghost {
+        margin-left: 0;
       }
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none; /* keep it simple on mobile */
-      }
-      .hero-text h1 {
-        font-size: 2rem;
+
+      header {
+        flex-direction: column;
+        gap: 8px;
       }
     }
   </style>
 </head>
+
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">AR.PORTFOLIO</div>
-    <nav class="nav-links">
+
+  <!-- HEADER -->
+  <header>
+    <div><strong>AR Portfolio</strong></div>
+    <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero" id="about">
-    <div class="hero-text">
-      <div class="tagline">Web Developer | Python Developer | Tech Enthusiast</div>
-      <h1>Hi, I'm Abhinandan.</h1>
+    <div>
+      <p class="hero-tagline">Web Developer | Python Developer | Tech Enthusiast</p>
+      <h1>Hi, I'm Abhinandan 👋</h1>
       <p>
-        I’m a Computer Science graduate (AI & ML) who enjoys building practical, user-focused
-        projects with Python, web technologies and data. I’m exploring web development,
-        backend logic and smart automation while constantly learning modern tools.
+        I build practical, user-focused web experiences and enjoy solving problems using modern tech.
+        I am exploring frontend, backend basics and real-world applications of AI and cybersecurity.
       </p>
+
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="mailto:abhiraj0275@gmail.com" class="btn-ghost">Email Me</a>
+        <!-- Resume download button -->
+        <a href="Resume_WebDeveloper_Final.pdf" download class="btn-ghost">⬇ Download Resume</a>
       </div>
     </div>
-    <div class="hero-photo">
-      <div class="hero-photo-inner">
-        <div class="hero-orbit"></div>
-        <!-- Make sure profile.jpg is in the same folder as this HTML file -->
-        <img src="profile.jpg" alt="Photo of Abhinandan Raj" />
-      </div>
+
+    <div class="profile-img">
+      <!-- Make sure this file exists in your repo root as "profile.png" -->
+      <img src="profile.png" alt="Photo of Abhinandan">
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- SKILLS -->
   <section id="skills">
-    <div class="section-heading">
-      <h2>Skills</h2>
-      <p>Technologies and tools I work with</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Web Development</h3>
-        <p>Building clean and responsive user interfaces with modern web foundations.</p>
-        <div class="skill-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS (Basics)</span>
-          <span class="tag">JavaScript (Basics)</span>
-          <span class="tag">Responsive Layouts</span>
-          <span class="tag">VS Code</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Programming & Data</h3>
-        <p>Using code to solve problems, automate logic and work with data.</p>
-        <div class="skill-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Java</span>
-          <span class="tag">C</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Excel</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>AI, ML & Cyber Basics</h3>
-        <p>Hands-on exposure from academic and internship projects.</p>
-        <div class="skill-tags">
-          <span class="tag">OpenCV</span>
-          <span class="tag">ML Fundamentals</span>
-          <span class="tag">Image Processing</span>
-          <span class="tag">Digital Forensics Basics</span>
-        </div>
-      </div>
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <p><strong>Web:</strong> HTML, CSS (Basics), JavaScript (Basics), Responsive UI</p>
+      <p><strong>Programming:</strong> Python, Java, C</p>
+      <p><strong>Tools:</strong> VS Code, MySQL, Excel</p>
+      <p><strong>AI / ML:</strong> OpenCV, Image Processing Basics, Machine Learning Fundamentals</p>
+      <p><strong>Cybersecurity:</strong> Digital Forensics Basics</p>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-heading">
-      <h2>Projects</h2>
-      <p>Some things I’ve built and experimented with</p>
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <strong>Driver Drowsiness Detection</strong>
+      <span>Python • OpenCV • Real-time</span>
+      <p>
+        Built a real-time alert system that monitors eye-blink patterns and warns when signs of
+        drowsiness are detected, aimed at improving driver safety.
+      </p>
     </div>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Driver Drowsiness Detection</h3>
-        <div class="project-meta">Python • OpenCV • Real-time</div>
-        <p>
-          A safety-oriented application that monitors eye-blink patterns in real time and
-          triggers alerts when signs of drowsiness are detected, designed to help reduce
-          fatigue-based road accidents.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Real-time Logic</span>
-        </div>
-      </div>
 
-      <div class="project-card">
-        <h3>Plant Disease Detection</h3>
-        <div class="project-meta">Machine Learning • Image Processing</div>
-        <p>
-          An ML model that works on leaf images to identify disease patterns and assist
-          with early detection of crop issues, helping improve productivity and reduce loss.
-        </p>
-        <div class="project-tags">
-          <span class="tag">ML Basics</span>
-          <span class="tag">Image Processing</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
+    <div class="project-card">
+      <strong>Plant Disease Detection</strong>
+      <span>Machine Learning • Image Processing</span>
+      <p>
+        Implemented a model to detect leaf diseases from images to help farmers act early and
+        reduce crop loss.
+      </p>
+    </div>
 
-      <div class="project-card">
-        <h3>Portfolio & Resume System</h3>
-        <div class="project-meta">HTML • CSS • Personal Branding</div>
-        <p>
-          This portfolio itself acts as a project showcasing a clean, responsive and
-          dark-themed developer profile suitable for internships and entry-level roles.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Web Design</span>
-          <span class="tag">Responsive UI</span>
-        </div>
-      </div>
+    <div class="project-card">
+      <strong>Portfolio Website</strong>
+      <span>HTML • CSS</span>
+      <p>
+        This personal portfolio website to showcase my skills, projects and resume for web developer roles.
+      </p>
     </div>
   </section>
 
-  <!-- Experience & Education -->
-  <section id="experience">
-    <div class="section-heading">
-      <h2>Experience & Education</h2>
-      <p>My background and where I learned along the way</p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Cybersecurity Intern — Amroha Police</h3>
-        <span>Cybercrime & Digital Forensics Exposure</span>
-        <p>
-          Supported cybercrime experts with digital evidence handling, basic threat analysis
-          and vulnerability checks. This experience strengthened my analytical mindset,
-          attention to detail and confidence in high-pressure situations.
-        </p>
-      </div>
-      <div class="timeline-item">
-        <h3>B.Tech CSE (AI & ML) — Sharda University</h3>
-        <span>7.1 CGPA</span>
-        <p>
-          Focus on Artificial Intelligence, Machine Learning and core Computer Science,
-          including programming, algorithms and data concepts.
-        </p>
-      </div>
-      <div class="timeline-item">
-        <h3>Intermediate — BSEB, Patna</h3>
-        <span>71%</span>
-      </div>
-      <div class="timeline-item">
-        <h3>10th — St. Joseph’s Sr. Sec. School</h3>
-        <span>87%</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
+  <!-- CONTACT -->
   <section id="contact">
-    <div class="section-heading">
-      <h2>Contact</h2>
-      <p>Let’s connect for opportunities, collaborations or ideas</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-box">
-        <p class="contact-label">Email</p>
-        <p><a href="mailto:abhiraj0275@gmail.com">abhiraj0275@gmail.com</a></p>
-
-        <p class="contact-label" style="margin-top:10px;">Phone</p>
-        <p><a href="tel:+919631698367">+91 9631698367</a></p>
-
-        <p class="contact-label" style="margin-top:10px;">LinkedIn</p>
-        <p><a href="https://www.linkedin.com/in/abhinandan-raj-cse/" target="_blank">
-          linkedin.com/in/abhinandan-raj-cse/
-        </a></p>
-
-        <p class="contact-label" style="margin-top:10px;">Location</p>
-        <p>Greater Noida, Uttar Pradesh, India</p>
-      </div>
-
-      <div class="contact-box">
-        <p class="contact-label">Quick Message (UI only)</p>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a static portfolio. To contact me, please use email or LinkedIn.');">
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Your email" required />
-          <textarea rows="3" placeholder="Your message"></textarea>
-          <button type="submit" class="btn-primary">Send Message</button>
-        </form>
-      </div>
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p>📍 Greater Noida, Uttar Pradesh, India</p>
+      <p>📧 <a href="mailto:abhiraj0275@gmail.com">abhiraj0275@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/abhinandan-raj-cse/" target="_blank">LinkedIn Profile</a></p>
     </div>
   </section>
 
-  <footer>
-    © <span id="year"></span> Abhinandan Raj · Built with HTML & CSS
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2025 Abhinandan Raj | Portfolio Website
   </footer>
 
-  <script>
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
